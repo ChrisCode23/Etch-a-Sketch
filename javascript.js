@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
 
-const square = document.createElement("div");
+let square = document.createElement("div");
 square.classList.add("square");
 
 const row = document.createElement("div");
@@ -21,6 +21,25 @@ rows.forEach((row) => {
     }
 });
 
+const squares = document.querySelectorAll(".square");
+
+
+squares.forEach((square) => {
+    square.addEventListener("mouseover", () => {
+        square.classList.add("selected");
+    })
+})
+
+/*
+const squareDebug = document.createElement("div");
+squareDebug.classList.add("square");
+
+document.body.appendChild(squareDebug);
+
+squareDebug.addEventListener("mouseover", () => {
+    squareDebug.classList.add("selected");
+})
+*/
 
 //There are 16 rows, each one has the square which is cloned by 16. Square is child of row. Row is child of container
 
