@@ -18,11 +18,12 @@ function cloneRow(size) {
 
 cloneRow(size);
 
-// Selects all rows
-const rows = document.querySelectorAll(".row");
+
 
 // Each row will append a certain number of cloned squares based on size argument
 function cloneSquare(size) {
+    // Selects all rows
+    const rows = document.querySelectorAll(".row");
     rows.forEach((row) => {
         for (let i = 0; i < size; i++){
             row.appendChild(square.cloneNode(true));
@@ -45,14 +46,16 @@ squares.forEach((square) => {
 })
 
 
-/*
+
 const button = document.querySelector("#prompt");
 button.addEventListener("click", () => {
-    size = prompt("Enter the size of the new grid", "16");
-
+    size = parseInt(prompt("Enter the size of the new grid", "16"));
+    
     container.replaceChildren();
+    cloneRow(size);
+    cloneSquare(size);
 })
-*/
+
 
 
 
