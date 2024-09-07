@@ -6,20 +6,31 @@ square.classList.add("square");
 let row = document.createElement("div");
 row.classList.add("row");
 
-// Clones row 16 times inside container
-for (let i = 0; i < 16; i++){
-    container.appendChild(row.cloneNode(true));
+// Default value for grid size
+let size = 16;
+
+// Clones row inside container a certain amount of times based on size argument
+function cloneRow(size) {
+    for (let i = 0; i < size; i++){
+        container.appendChild(row.cloneNode(true));
+    }
 }
+
+cloneRow(size);
 
 // Selects all rows
 const rows = document.querySelectorAll(".row");
 
-// Each row will append 16 cloned squares
-rows.forEach((row) => {
-    for (let i = 0; i < 16; i++){
-        row.appendChild(square.cloneNode(true));
-    }
-});
+// Each row will append a certain number of cloned squares based on size argument
+function cloneSquare(size) {
+    rows.forEach((row) => {
+        for (let i = 0; i < size; i++){
+            row.appendChild(square.cloneNode(true));
+        }
+    });
+}
+
+cloneSquare(size);
 
 
 
@@ -34,13 +45,14 @@ squares.forEach((square) => {
 })
 
 
-
+/*
 const button = document.querySelector("#prompt");
 button.addEventListener("click", () => {
-    let size = prompt("Enter the size of the new grid", "16 x 16");
+    size = prompt("Enter the size of the new grid", "16");
+
     container.replaceChildren();
 })
-
+*/
 
 
 
