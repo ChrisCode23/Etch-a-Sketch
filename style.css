@@ -8,25 +8,31 @@
     align-items: center;
 }
 
+/* Places button on top-right corner */
 #prompt {
     align-self: flex-start;
 }
 
+/* Grid container controls rows */
 .container {
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     width: 960px;
+    border: 3px solid black;
 }
 
+/* Sets squares order vertically in every row and takes up whole space available */
 .row {
     display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
+/* Sets width and height to automatically change and keep same square ratio when grid size increases */
 .square {
-    width: 16px;
-    height: 16px;
+    aspect-ratio: 1/1;
     border: 1px solid black;
+    flex: 0 1 auto;
 }
 
 .selected {
