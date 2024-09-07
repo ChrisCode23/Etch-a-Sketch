@@ -3,7 +3,7 @@ const container = document.querySelector(".container");
 let square = document.createElement("div");
 square.classList.add("square");
 
-const row = document.createElement("div");
+let row = document.createElement("div");
 row.classList.add("row");
 
 // Clones row 16 times inside container
@@ -21,6 +21,8 @@ rows.forEach((row) => {
     }
 });
 
+
+
 // NodeList of all squares
 const squares = document.querySelectorAll(".square");
 
@@ -29,6 +31,14 @@ squares.forEach((square) => {
     square.addEventListener("mouseover", () => {
         square.classList.add("selected");
     })
+})
+
+
+
+const button = document.querySelector("#prompt");
+button.addEventListener("click", () => {
+    let size = prompt("Enter the size of the new grid", "16 x 16");
+    container.replaceChildren();
 })
 
 
