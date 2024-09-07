@@ -35,15 +35,20 @@ cloneSquare(size);
 
 
 
-// NodeList of all squares
-const squares = document.querySelectorAll(".square");
+
 
 // Colors a square whenever mouse is over
-squares.forEach((square) => {
-    square.addEventListener("mouseover", () => {
-        square.classList.add("selected");
+function colorSquare() {
+    // NodeList of all squares
+    const squares = document.querySelectorAll(".square");
+    squares.forEach((square) => {
+        square.addEventListener("mouseover", () => {
+            square.classList.add("selected");
+        })
     })
-})
+}
+
+colorSquare();
 
 
 
@@ -54,6 +59,7 @@ button.addEventListener("click", () => {
     container.replaceChildren();
     cloneRow(size);
     cloneSquare(size);
+    colorSquare();
 })
 
 
