@@ -21,26 +21,17 @@ rows.forEach((row) => {
     }
 });
 
+// NodeList of all squares
 const squares = document.querySelectorAll(".square");
 
-
+// Colors a square whenever mouse is over
 squares.forEach((square) => {
     square.addEventListener("mouseover", () => {
         square.classList.add("selected");
     })
 })
 
-/*
-const squareDebug = document.createElement("div");
-squareDebug.classList.add("square");
 
-document.body.appendChild(squareDebug);
 
-squareDebug.addEventListener("mouseover", () => {
-    squareDebug.classList.add("selected");
-})
-*/
-
-//There are 16 rows, each one has the square which is cloned by 16. Square is child of row. Row is child of container
 
 
