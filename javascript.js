@@ -56,10 +56,14 @@ const button = document.querySelector("#prompt");
 button.addEventListener("click", () => {
     size = parseInt(prompt("Enter the size of the new grid", "16"));
     
-    container.replaceChildren();
-    cloneRow(size);
-    cloneSquare(size);
-    colorSquare();
+    if (size < 100) {
+        container.replaceChildren();
+        cloneRow(size);
+        cloneSquare(size);
+        colorSquare();
+    } else {
+        alert("Size is too big. Try again!");
+    }
 })
 
 
