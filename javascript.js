@@ -34,6 +34,15 @@ function cloneSquare(size) {
 cloneSquare(size);
 
 
+// Generates a random color
+function randomRGBColor() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let randomColor = (`rgb(${r}, ${g}, ${b})`);
+    return randomColor;
+}
+
 
 
 
@@ -43,7 +52,7 @@ function colorSquare() {
     const squares = document.querySelectorAll(".square");
     squares.forEach((square) => {
         square.addEventListener("mouseover", () => {
-            square.classList.add("selected");
+            square.style.backgroundColor = randomRGBColor();
         })
     })
 }
